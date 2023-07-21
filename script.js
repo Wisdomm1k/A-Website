@@ -52,6 +52,8 @@ signUpButton.addEventListener('click', (e) => {
             // send to localstorage
     localStorage.setItem('formData', JSON.stringify(formData)); 
 
+    alert("You've signed up successfully 🎉")
+    
     //clear form
     document.querySelector(".mySignup").reset();
     document.querySelector('.signupEmail').focus()
@@ -83,12 +85,10 @@ loginButton.addEventListener('click', (e) => {
 
     //check if data in local storage is same as value inputted
     if(userEmailFromLocalStorage){
-        console.log('it exists')
-        alert("You've logged in 🙂👍")
+        alert("You've logged in 👍")
         window.location.href = "./page.html"
     }
     else{
-        console.log('does not exist')
         alert('Username or Password is not correct 😂')
     }
     
@@ -98,13 +98,12 @@ loginButton.addEventListener('click', (e) => {
     //to focus typing input on email after form has been submitted
     document.querySelector('.loginEmail').focus()
 
-})
-
-window.onload(()=>{
-    document.querySelector(".mySignup").reset();
-    document.querySelector('.signupEmail').focus()
-    document.querySelector('.myLogin').reset()
-    document.querySelector('.loginEmail').focus()
+    window.onload(()=>{
+        document.querySelector(".mySignup").reset();
+        document.querySelector('.signupEmail').focus()
+        document.querySelector('.myLogin').reset()
+        document.querySelector('.loginEmail').focus()
+    })
 })
 
 
